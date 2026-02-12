@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Skin Analysis — AI-powered grooming tool concept by Aftab Alam">
+    <title>AI Skin Analysis — AFTAB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">aftab<span>.dev</span></a>
+            <nav class="nav" id="main-nav">
+                <a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html"
+                    class="active">Projects</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <div class="toggle-group"><span class="toggle-label">Theme</span>
+                    <div class="toggle-btn" id="theme-toggle" role="button"></div>
+                </div>
+                <div class="toggle-group"><span class="toggle-label">Terminal</span>
+                    <div class="toggle-btn" id="terminal-toggle" role="button"></div>
+                </div>
+                <button class="hamburger" id="hamburger"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="project-header">
+                <span class="card-tag">AI / ML Concept</span>
+                <h1>AI Skin Analysis</h1>
+                <p class="project-role">AI Developer & Concept Designer</p>
+                <p class="project-desc">An Android-based AI system where users upload their photo and receive skin tone
+                    analysis, hair condition detection, face structure mapping, personalized skincare routines, and
+                    AI-generated hairstyle previews on their real face.</p>
+                <div class="card-tech mt-2">
+                    <span>Python</span><span>TensorFlow</span><span>ML</span><span>Android</span>
+                </div>
+            </div>
+
+            <section class="project-section">
+                <h2><span class="emoji">🎯</span> Core Problem</h2>
+                <ul class="problem-list">
+                    <li>People follow generic skincare advice</li>
+                    <li>No personalization based on actual skin analysis</li>
+                    <li>No visualization of hairstyle changes</li>
+                    <li>Existing apps lack AI-driven recommendations</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2><span class="emoji">🤖</span> AI Focus</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">Facial landmark detection</div>
+                    <div class="feature-item">Skin tone classification</div>
+                    <div class="feature-item">Hair condition analysis</div>
+                    <div class="feature-item">Face structure mapping</div>
+                    <div class="feature-item">Hairstyle overlay generation on real face</div>
+                    <div class="feature-item">Product recommendation logic</div>
+                    <div class="feature-item">Personalized skincare routine</div>
+                </div>
+                <div class="vision-box mt-3">
+                    <p>Bring AI-driven personalization to daily grooming decisions. Move beyond generic advice to truly
+                        personalized, data-backed skincare and styling recommendations.</p>
+                </div>
+            </section>
+
+            <div class="project-nav">
+                <a href="project-medique.html">← Prev: Medique</a>
+                <a href="project-sose-connect.html">Next: SOSE Connect →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <span>Aftab Alam</span> · 2026</p>
+        </div>
+    </footer>
+    <!-- ADVANCED TERMINAL -->
+    <div class="terminal-overlay" id="terminal-overlay">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="terminal-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <span class="terminal-title">aftab@portfolio — zsh — 80×24</span>
+            <button class="terminal-close" id="terminal-close">ESC</button>
+        </div>
+        <div class="terminal-body" id="terminal-body"></div>
+        <div class="terminal-input-line">
+            <span class="user">aftab</span><span class="at">@</span><span class="host">portfolio</span><span
+                class="colon">:</span><span class="dir">~</span><span class="dollar">$</span>
+            <input type="text" id="terminal-input" placeholder="" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="terminal-status">
+            <div class="status-left">
+                <span class="status-item"><span class="status-dot"></span> SECURE</span>
+                <span class="status-item">AES-256</span>
+                <span class="status-item">zsh 5.9</span>
+            </div>
+            <div class="status-right">
+                <span class="status-item">CMD: <span id="cmd-count">0</span></span>
+                <span class="status-item">PID: 1337</span>
+            </div>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

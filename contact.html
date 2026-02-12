@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Aftab Alam — Reach out for collaborations, projects, or just to say hi.">
+    <title>Contact — AFTAB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">aftab<span>.dev</span></a>
+            <nav class="nav" id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <div class="toggle-group">
+                    <span class="toggle-label">Theme</span>
+                    <div class="toggle-btn" id="theme-toggle" role="button" aria-label="Toggle light/dark theme"></div>
+                </div>
+                <div class="toggle-group">
+                    <span class="toggle-label">Terminal</span>
+                    <div class="toggle-btn" id="terminal-toggle" role="button" aria-label="Toggle terminal mode"></div>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN ========== -->
+    <main>
+        <div class="container">
+
+            <section class="section">
+                <span class="section-label">Contact</span>
+                <h1 class="section-title">Let's Connect</h1>
+                <p class="section-desc">Have an idea, a project, or just want to say hello? I'd love to hear from you.
+                    Drop a message below.</p>
+            </section>
+
+            <section class="section">
+                <div class="contact-grid">
+
+                    <!-- FORM — Web3Forms Integration -->
+                    <div>
+                        <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                            <input type="hidden" name="access_key" value="053f6176-b836-47f5-86c1-f83169e115a3">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Write your message here..."
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- CONTACT INFO -->
+                    <div>
+                        <div class="contact-info-card">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>aftabalamcasse@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>School</h4>
+                                <p>BDRA-SOSE, Lajpat Nagar</p>
+                            </div>
+                        </div>
+
+                        <a href="https://github.com/thelost-beep" target="_blank" rel="noopener"
+                            style="text-decoration:none;color:inherit;">
+                            <div class="contact-info-card">
+                                <div class="contact-icon">🐙</div>
+                                <div>
+                                    <h4>GitHub</h4>
+                                    <p>github.com/thelost-beep</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="https://ethicbizz.org" target="_blank" rel="noopener"
+                            style="text-decoration:none;color:inherit;">
+                            <div class="contact-info-card">
+                                <div class="contact-icon">🚀</div>
+                                <div>
+                                    <h4>EthicBizz Club</h4>
+                                    <p>ethicbizz.org</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="contact-info-card">
+                            <div class="contact-icon">💼</div>
+                            <div>
+                                <h4>Status</h4>
+                                <p>Open for collaborations</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <span>Aftab Alam</span> · 2026</p>
+        </div>
+    </footer>
+
+    <!-- ========== ADVANCED TERMINAL ========== -->
+    <div class="terminal-overlay" id="terminal-overlay">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="terminal-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <span class="terminal-title">aftab@portfolio — zsh — 80×24</span>
+            <button class="terminal-close" id="terminal-close">ESC</button>
+        </div>
+        <div class="terminal-body" id="terminal-body"></div>
+        <div class="terminal-input-line">
+            <span class="user">aftab</span><span class="at">@</span><span class="host">portfolio</span><span
+                class="colon">:</span><span class="dir">~</span><span class="dollar">$</span>
+            <input type="text" id="terminal-input" placeholder="" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="terminal-status">
+            <div class="status-left">
+                <span class="status-item"><span class="status-dot"></span> SECURE</span>
+                <span class="status-item">AES-256</span>
+                <span class="status-item">zsh 5.9</span>
+            </div>
+            <div class="status-right">
+                <span class="status-item">CMD: <span id="cmd-count">0</span></span>
+                <span class="status-item">PID: 1337</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

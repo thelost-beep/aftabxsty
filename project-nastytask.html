@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="NastyTask Done — AI-assisted social web classroom for academic task collaboration by Aftab Alam">
+    <title>NastyTask Done — AFTAB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">aftab<span>.dev</span></a>
+            <nav class="nav" id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <div class="toggle-group">
+                    <span class="toggle-label">Theme</span>
+                    <div class="toggle-btn" id="theme-toggle" role="button" aria-label="Toggle theme"></div>
+                </div>
+                <div class="toggle-group">
+                    <span class="toggle-label">Terminal</span>
+                    <div class="toggle-btn" id="terminal-toggle" role="button" aria-label="Toggle terminal"></div>
+                </div>
+                <button class="hamburger" id="hamburger"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="project-header">
+                <span class="card-tag">AI Social Platform</span>
+                <h1>NastyTask Done</h1>
+                <p class="project-role">System Architect, Full-Stack Developer & AI Integration Lead</p>
+                <p class="project-desc">An AI-assisted social web classroom where students help each other manage
+                    academic workload, deadlines, and tasks in a structured and intelligent way. It combines a social
+                    feed, task marketplace, peer collaboration, and AI-based workload intelligence — designed to reduce
+                    academic stress and make student collaboration more efficient.</p>
+                <div class="card-tech mt-2">
+                    <span>React</span><span>Supabase</span><span>PostgreSQL</span><span>AI/ML</span><span>WebSocket</span>
+                </div>
+            </div>
+
+            <!-- PROBLEM -->
+            <section class="project-section">
+                <h2><span class="emoji">🎯</span> Core Problem</h2>
+                <p class="mb-3" style="color:var(--text-secondary)">Students constantly face:</p>
+                <ul class="problem-list">
+                    <li>Multiple deadlines at once with heavy assignments</li>
+                    <li>Time pressure and overlapping subjects</li>
+                    <li>No structured way to collaborate or delegate</li>
+                    <li>Some students are strong in certain subjects but can't help easily</li>
+                    <li>No platform that understands academic workload as a system</li>
+                </ul>
+            </section>
+
+            <!-- HOW IT WORKS -->
+            <section class="project-section">
+                <h2><span class="emoji">📱</span> How It Works</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">📰 Social Task Feed — Tasks appear like scrollable posts with title,
+                        subject, deadline, budget, urgency</div>
+                    <div class="feature-item">📝 Smart Task Posting — AI helps improve descriptions and checks for
+                        clarity before posting</div>
+                    <div class="feature-item">✅ One-Click Accept — First valid accept locks the task, preventing
+                        confusion and chaos</div>
+                    <div class="feature-item">💬 Private Chat — Both users can chat, share files, discuss details and
+                        deliver work</div>
+                    <div class="feature-item">⭐ Ratings System — Both users rate each other on completion, building
+                        trust over time</div>
+                    <div class="feature-item">🔔 Smart Notifications — In-app notifications, email alerts for matching
+                        tasks</div>
+                </div>
+            </section>
+
+            <!-- AI LAYER -->
+            <section class="project-section">
+                <h2><span class="emoji">🤖</span> Academic Load Intelligence (ALI)</h2>
+                <p class="mb-3" style="color:var(--text-secondary)">The AI doesn't do assignments — it understands
+                    academic workload patterns:</p>
+                <div class="feature-grid">
+                    <div class="feature-item">Task Clarity Assistant — Improves poorly written task descriptions</div>
+                    <div class="feature-item">Workload Score — Analyzes active tasks, deadline overlaps, urgency to show
+                        Low/Medium/High load</div>
+                    <div class="feature-item">Effort & Budget Estimation — Suggests complexity, budget range, deadline
+                        risk</div>
+                    <div class="feature-item">Smart Matching — Recommends tasks based on past subjects, ratings, speed,
+                        skill history</div>
+                    <div class="feature-item">Skill Graph — Builds a skill fingerprint: strong subjects, consistency,
+                        reliability</div>
+                    <div class="feature-item">Burnout Prevention — Helps students avoid overcommitting and academic
+                        burnout</div>
+                </div>
+            </section>
+
+            <!-- TECH -->
+            <section class="project-section">
+                <h2><span class="emoji">🏗️</span> Technical Architecture</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">React — Modern web interface with responsive design</div>
+                    <div class="feature-item">Supabase — Database, authentication, real-time chat</div>
+                    <div class="feature-item">PostgreSQL — Robust data layer with RLS policies</div>
+                    <div class="feature-item">WebSocket — Real-time messaging and notifications</div>
+                    <div class="feature-item">AI API Integration — Intelligent task and workload analysis</div>
+                    <div class="feature-item">Trust-Based Moderation — Automated via ratings and reports</div>
+                </div>
+            </section>
+
+            <!-- VISION -->
+            <section class="project-section">
+                <h2><span class="emoji">🔮</span> What Makes It Different</h2>
+                <div class="vision-box">
+                    <p>Most platforms solve questions or match tutors manually. NastyTask Done understands academic
+                        pressure as a system. It optimizes task distribution, reduces overload, encourages peer
+                        learning, and builds student reputation. It's not just about getting work done — it's about
+                        managing workload intelligently. Social feed + Task marketplace + AI workload intelligence.</p>
+                </div>
+            </section>
+
+            <!-- NAV -->
+            <div class="project-nav">
+                <a href="project-jsconsole.html">← Prev: JS Console</a>
+                <a href="projects.html">All Projects →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <span>Aftab Alam</span> · 2026</p>
+        </div>
+    </footer>
+
+    <!-- ADVANCED TERMINAL -->
+    <div class="terminal-overlay" id="terminal-overlay">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="terminal-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <span class="terminal-title">aftab@portfolio — zsh — 80×24</span>
+            <button class="terminal-close" id="terminal-close">ESC</button>
+        </div>
+        <div class="terminal-body" id="terminal-body"></div>
+        <div class="terminal-input-line">
+            <span class="user">aftab</span><span class="at">@</span><span class="host">portfolio</span><span
+                class="colon">:</span><span class="dir">~</span><span class="dollar">$</span>
+            <input type="text" id="terminal-input" placeholder="" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="terminal-status">
+            <div class="status-left">
+                <span class="status-item"><span class="status-dot"></span> SECURE</span>
+                <span class="status-item">AES-256</span>
+                <span class="status-item">zsh 5.9</span>
+            </div>
+            <div class="status-right">
+                <span class="status-item">CMD: <span id="cmd-count">0</span></span>
+                <span class="status-item">PID: 1337</span>
+            </div>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

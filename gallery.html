@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gallery — Aftab Alam's workspace, coding visuals, and development aesthetic.">
+    <title>Gallery — AFTAB</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Gallery placeholder images with CSS gradients */
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fira Code', monospace;
+            font-size: 2.5rem;
+            color: rgba(255, 255, 255, 0.15);
+        }
+
+        .gallery-placeholder.g1 {
+            background: linear-gradient(135deg, #0a0a2e 0%, #1a0a3e 40%, #0d1f3c 100%);
+        }
+
+        .gallery-placeholder.g2 {
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 40%, #0a2a1a 100%);
+        }
+
+        .gallery-placeholder.g3 {
+            background: linear-gradient(135deg, #1a0a1a 0%, #2a0a2a 40%, #0a1a2a 100%);
+        }
+
+        .gallery-placeholder.g4 {
+            background: linear-gradient(135deg, #0a1a0a 0%, #1a2a1a 40%, #0a2a2a 100%);
+        }
+
+        .gallery-placeholder.g5 {
+            background: linear-gradient(135deg, #1a1a0a 0%, #2a2a1a 40%, #1a0a2a 100%);
+        }
+
+        .gallery-placeholder.g6 {
+            background: linear-gradient(135deg, #0a0a1a 0%, #0a1a2a 40%, #1a2a3a 100%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">aftab<span>.dev</span></a>
+            <nav class="nav" id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <div class="toggle-group">
+                    <span class="toggle-label">Theme</span>
+                    <div class="toggle-btn" id="theme-toggle" role="button" aria-label="Toggle light/dark theme"></div>
+                </div>
+                <div class="toggle-group">
+                    <span class="toggle-label">Terminal</span>
+                    <div class="toggle-btn" id="terminal-toggle" role="button" aria-label="Toggle terminal mode"></div>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN ========== -->
+    <main>
+        <div class="container">
+
+            <section class="section">
+                <span class="section-label">Gallery</span>
+                <h1 class="section-title">Visuals & Vibes</h1>
+                <p class="section-desc">A glimpse into the workspace, the code, and the developer aesthetic. Click any
+                    image to view full-size.</p>
+            </section>
+
+            <section class="section">
+                <div class="gallery-grid">
+
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder g1">
+                            <span>💻</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Coding Setup</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder g2">
+                            <span>⌨️</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Late Night Coding</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder g3">
+                            <span>🖥️</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Multi-Monitor Workspace</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder g4">
+                            <span>🚀</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Project Launch Day</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder g5">
+                            <span>📱</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Mobile Development</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder g6">
+                            <span>🤖</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>AI Experiments</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- AI GENERATED ART -->
+            <section class="section">
+                <span class="section-label">AI Art</span>
+                <h2 class="section-title">AI-Generated Visuals</h2>
+                <p class="section-desc">AI-generated artwork and concept visuals. This gallery will be populated with
+                    creative AI art — stay tuned.</p>
+
+                <div class="gallery-grid">
+
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder g1">
+                            <span>🎨</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Neural Art #1</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder g3">
+                            <span>🤖</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>AI Portrait</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder g5">
+                            <span>🌌</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Digital Cosmos</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder g2">
+                            <span>💡</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Concept Vision</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder g4">
+                            <span>🧬</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Data Visualization</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder g6">
+                            <span>🔮</span>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Future Interface</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <span>Aftab Alam</span> · 2026</p>
+        </div>
+    </footer>
+
+    <!-- ========== LIGHTBOX ========== -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">✕</button>
+        <img id="lightbox-img" src="" alt="Gallery Image">
+    </div>
+
+    <!-- ========== ADVANCED TERMINAL ========== -->
+    <div class="terminal-overlay" id="terminal-overlay">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="terminal-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <span class="terminal-title">aftab@portfolio — zsh — 80×24</span>
+            <button class="terminal-close" id="terminal-close">ESC</button>
+        </div>
+        <div class="terminal-body" id="terminal-body"></div>
+        <div class="terminal-input-line">
+            <span class="user">aftab</span><span class="at">@</span><span class="host">portfolio</span><span
+                class="colon">:</span><span class="dir">~</span><span class="dollar">$</span>
+            <input type="text" id="terminal-input" placeholder="" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="terminal-status">
+            <div class="status-left">
+                <span class="status-item"><span class="status-dot"></span> SECURE</span>
+                <span class="status-item">AES-256</span>
+                <span class="status-item">zsh 5.9</span>
+            </div>
+            <div class="status-right">
+                <span class="status-item">CMD: <span id="cmd-count">0</span></span>
+                <span class="status-item">PID: 1337</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

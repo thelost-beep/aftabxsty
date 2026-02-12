@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Counselling System — Digital counselling infrastructure by Aftab Alam">
+    <title>Counselling System — AFTAB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">aftab<span>.dev</span></a>
+            <nav class="nav" id="main-nav">
+                <a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html"
+                    class="active">Projects</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <div class="toggle-group"><span class="toggle-label">Theme</span>
+                    <div class="toggle-btn" id="theme-toggle" role="button"></div>
+                </div>
+                <div class="toggle-group"><span class="toggle-label">Terminal</span>
+                    <div class="toggle-btn" id="terminal-toggle" role="button"></div>
+                </div>
+                <button class="hamburger" id="hamburger"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="project-header">
+                <span class="card-tag">Mental Health / Education</span>
+                <h1>Student Counselling System</h1>
+                <p class="project-role">System Designer & Developer</p>
+                <p class="project-desc">A structured web-based system that digitizes student counselling sessions in
+                    schools. Instead of informal notebook entries, this system creates secure, trackable counselling
+                    documentation. Privacy-first. Structure-first. Support-first.</p>
+                <div class="card-tech mt-2"><span>Web App</span><span>Database</span><span>Security</span></div>
+            </div>
+
+            <section class="project-section">
+                <h2><span class="emoji">🎯</span> Core Problem</h2>
+                <ul class="problem-list">
+                    <li>No digital counselling records in most schools</li>
+                    <li>Can't track student progress over time</li>
+                    <li>Cannot identify recurring issues</li>
+                    <li>Lose confidentiality structure with notebooks</li>
+                    <li>No follow-up scheduling system</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2><span class="emoji">⚙️</span> Key Functional Systems</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">Student session logging</div>
+                    <div class="feature-item">Appointment booking system</div>
+                    <div class="feature-item">Counsellor dashboard</div>
+                    <div class="feature-item">Confidential record storage</div>
+                    <div class="feature-item">Category tagging: Academic / Emotional / Career</div>
+                    <div class="feature-item">Follow-up scheduling</div>
+                    <div class="feature-item">Case tracking timeline</div>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <h2><span class="emoji">🔐</span> Security Model</h2>
+                <ul class="solution-list">
+                    <li>Role-based data visibility</li>
+                    <li>Segmented access by role</li>
+                    <li>Sensitive data protection logic</li>
+                    <li>No unauthorized access to student records</li>
+                </ul>
+                <div class="vision-box mt-3">
+                    <p>Support student growth holistically — not just academically. Build infrastructure that respects
+                        privacy while enabling meaningful counsellor-student interaction.</p>
+                </div>
+            </section>
+
+            <div class="project-nav">
+                <a href="project-classroomx.html">← Prev: ClassroomX</a>
+                <a href="project-medique.html">Next: Medique →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <span>Aftab Alam</span> · 2026</p>
+        </div>
+    </footer>
+
+    <!-- ADVANCED TERMINAL -->
+    <div class="terminal-overlay" id="terminal-overlay">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="terminal-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <span class="terminal-title">aftab@portfolio — zsh — 80×24</span>
+            <button class="terminal-close" id="terminal-close">ESC</button>
+        </div>
+        <div class="terminal-body" id="terminal-body"></div>
+        <div class="terminal-input-line">
+            <span class="user">aftab</span><span class="at">@</span><span class="host">portfolio</span><span
+                class="colon">:</span><span class="dir">~</span><span class="dollar">$</span>
+            <input type="text" id="terminal-input" placeholder="" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="terminal-status">
+            <div class="status-left">
+                <span class="status-item"><span class="status-dot"></span> SECURE</span>
+                <span class="status-item">AES-256</span>
+                <span class="status-item">zsh 5.9</span>
+            </div>
+            <div class="status-right">
+                <span class="status-item">CMD: <span id="cmd-count">0</span></span>
+                <span class="status-item">PID: 1337</span>
+            </div>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

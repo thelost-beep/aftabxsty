@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TopperTrack — AI-Based Academic Discipline Engine by Aftab Alam">
+    <title>TopperTrack — AFTAB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">aftab<span>.dev</span></a>
+            <nav class="nav" id="main-nav">
+                <a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html"
+                    class="active">Projects</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <div class="toggle-group"><span class="toggle-label">Theme</span>
+                    <div class="toggle-btn" id="theme-toggle" role="button"></div>
+                </div>
+                <div class="toggle-group"><span class="toggle-label">Terminal</span>
+                    <div class="toggle-btn" id="terminal-toggle" role="button"></div>
+                </div>
+                <button class="hamburger" id="hamburger"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="project-header">
+                <span class="card-tag">EdTech / AI</span>
+                <h1>TopperTrack</h1>
+                <p class="project-role">Product Designer & Developer</p>
+                <p class="project-desc">TopperTrack is not a "to-do list" app. It is a structured academic intelligence
+                    system designed to analyze, track, and optimize exam preparation behavior. It focuses on pattern
+                    correction and mistake tracking — not motivation quotes.</p>
+                <div class="card-tech mt-2"><span>React</span><span>Supabase</span><span>AI APIs</span></div>
+            </div>
+
+            <section class="project-section">
+                <h2><span class="emoji">🎯</span> Core Problem</h2>
+                <p class="mb-3" style="color:var(--text-secondary)">Students face these challenges:</p>
+                <ul class="problem-list">
+                    <li>Study randomly without structure</li>
+                    <li>Repeat the same mistakes</li>
+                    <li>Forget weak areas over time</li>
+                    <li>Don't track performance patterns</li>
+                    <li>Have no analytics visibility into their progress</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2><span class="emoji">🧠</span> Core Modules</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">Study Log — Subject-wise daily entries & time tracking</div>
+                    <div class="feature-item">Mistake Tracker — Categorize by subject & chapter</div>
+                    <div class="feature-item">Performance Analytics — Accuracy %, weak chapters</div>
+                    <div class="feature-item">Formula & Concept Vault — Quick revision sheets</div>
+                    <div class="feature-item">Gamification — Streak tracking & discipline scoring</div>
+                    <div class="feature-item">Topic Tagging — Organize entries by topic</div>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <h2><span class="emoji">🤖</span> Intelligence Layer</h2>
+                <p class="mb-3" style="color:var(--text-secondary)">Instead of random AI, TopperTrack focuses on:</p>
+                <div class="feature-grid">
+                    <div class="feature-item">Pattern recognition in study habits</div>
+                    <div class="feature-item">Weakness identification across subjects</div>
+                    <div class="feature-item">Performance-based suggestions</div>
+                    <div class="feature-item">Trend analysis over time</div>
+                </div>
+                <div class="vision-box mt-3">
+                    <p>It encourages discipline, not dopamine. Turn exam preparation into measurable, data-driven
+                        growth.</p>
+                </div>
+            </section>
+
+            <div class="project-nav">
+                <a href="project-fect.html">← Prev: Fect</a>
+                <a href="project-classroomx.html">Next: ClassroomX →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <span>Aftab Alam</span> · 2026</p>
+        </div>
+    </footer>
+    <!-- ADVANCED TERMINAL -->
+    <div class="terminal-overlay" id="terminal-overlay">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="terminal-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <span class="terminal-title">aftab@portfolio — zsh — 80×24</span>
+            <button class="terminal-close" id="terminal-close">ESC</button>
+        </div>
+        <div class="terminal-body" id="terminal-body"></div>
+        <div class="terminal-input-line">
+            <span class="user">aftab</span><span class="at">@</span><span class="host">portfolio</span><span
+                class="colon">:</span><span class="dir">~</span><span class="dollar">$</span>
+            <input type="text" id="terminal-input" placeholder="" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="terminal-status">
+            <div class="status-left">
+                <span class="status-item"><span class="status-dot"></span> SECURE</span>
+                <span class="status-item">AES-256</span>
+                <span class="status-item">zsh 5.9</span>
+            </div>
+            <div class="status-right">
+                <span class="status-item">CMD: <span id="cmd-count">0</span></span>
+                <span class="status-item">PID: 1337</span>
+            </div>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

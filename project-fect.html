@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fect — Digital Library Infrastructure System by Aftab Alam">
+    <title>Fect — AFTAB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">aftab<span>.dev</span></a>
+            <nav class="nav" id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <div class="toggle-group">
+                    <span class="toggle-label">Theme</span>
+                    <div class="toggle-btn" id="theme-toggle" role="button" aria-label="Toggle theme"></div>
+                </div>
+                <div class="toggle-group">
+                    <span class="toggle-label">Terminal</span>
+                    <div class="toggle-btn" id="terminal-toggle" role="button" aria-label="Toggle terminal"></div>
+                </div>
+                <button class="hamburger" id="hamburger"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="project-header">
+                <span class="card-tag">Educational Infrastructure</span>
+                <h1>Fect</h1>
+                <p class="project-role">Founder, System Architect, Full-Stack Developer</p>
+                <p class="project-desc">A structured, multi-user digital library management system designed to modernize
+                    school libraries that still rely on physical registers and manual tracking. It is not just a CRUD
+                    app — it is an institutional workflow system.</p>
+                <div class="card-tech mt-2">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+
+            <!-- PROBLEM -->
+            <section class="project-section">
+                <h2><span class="emoji">🎯</span> Core Problem</h2>
+                <p class="mb-3" style="color:var(--text-secondary)">Most school libraries suffer from:</p>
+                <ul class="problem-list">
+                    <li>Manual book issue records</li>
+                    <li>No centralized digital tracking</li>
+                    <li>Unauthorized access to records</li>
+                    <li>No structured permission model</li>
+                    <li>Data inconsistency</li>
+                    <li>No digital expansion (ebooks, PDFs)</li>
+                </ul>
+            </section>
+
+            <!-- SYSTEM DESIGN -->
+            <section class="project-section">
+                <h2><span class="emoji">🧠</span> System Design Thinking</h2>
+                <p class="mb-3" style="color:var(--text-secondary)">FECT was built around role-based authority:</p>
+                <div class="feature-grid">
+                    <div class="feature-item">Administrator → Controls system & approvals</div>
+                    <div class="feature-item">Librarian → Manages books & transactions</div>
+                    <div class="feature-item">Teacher → Limited access & requests</div>
+                    <div class="feature-item">(Future) Students → Read-only / digital access</div>
+                </div>
+                <div class="mt-3">
+                    <p style="color:var(--text-secondary)">Instead of open registration, the system implements:</p>
+                    <ul class="solution-list mt-2">
+                        <li>Access request</li>
+                        <li>School-level approval</li>
+                        <li>Role assignment</li>
+                        <li>Permission-based visibility</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- KEY FEATURES -->
+            <section class="project-section">
+                <h2><span class="emoji">⚙️</span> Key Functional Modules</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">Book inventory management</div>
+                    <div class="feature-item">Issue / return tracking</div>
+                    <div class="feature-item">Fine calculation logic</div>
+                    <div class="feature-item">User role hierarchy</div>
+                    <div class="feature-item">Admin dashboard</div>
+                    <div class="feature-item">Activity logs</div>
+                    <div class="feature-item">Multi-school adaptability</div>
+                </div>
+            </section>
+
+            <!-- SECURITY -->
+            <section class="project-section">
+                <h2><span class="emoji">🔐</span> Security Logic</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">Role-based permissions</div>
+                    <div class="feature-item">Segmented database access</div>
+                    <div class="feature-item">Approval-based user onboarding</div>
+                    <div class="feature-item">Future: row-level data security</div>
+                </div>
+            </section>
+
+            <!-- VISION -->
+            <section class="project-section">
+                <h2><span class="emoji">🔮</span> Future Vision</h2>
+                <div class="vision-box">
+                    <p>Ebook integration. PDF reading inside dashboard. Digital academic resource ecosystem.
+                        Inter-school analytics. FECT reflects structured backend logic and long-term scalability
+                        thinking.</p>
+                </div>
+            </section>
+
+            <!-- NAV -->
+            <div class="project-nav">
+                <a href="projects.html">← All Projects</a>
+                <a href="project-toppertrack.html">Next: TopperTrack →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <span>Aftab Alam</span> · 2026</p>
+        </div>
+    </footer>
+
+    <!-- ADVANCED TERMINAL -->
+    <div class="terminal-overlay" id="terminal-overlay">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="terminal-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <span class="terminal-title">aftab@portfolio — zsh — 80×24</span>
+            <button class="terminal-close" id="terminal-close">ESC</button>
+        </div>
+        <div class="terminal-body" id="terminal-body"></div>
+        <div class="terminal-input-line">
+            <span class="user">aftab</span><span class="at">@</span><span class="host">portfolio</span><span
+                class="colon">:</span><span class="dir">~</span><span class="dollar">$</span>
+            <input type="text" id="terminal-input" placeholder="" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="terminal-status">
+            <div class="status-left">
+                <span class="status-item"><span class="status-dot"></span> SECURE</span>
+                <span class="status-item">AES-256</span>
+                <span class="status-item">zsh 5.9</span>
+            </div>
+            <div class="status-right">
+                <span class="status-item">CMD: <span id="cmd-count">0</span></span>
+                <span class="status-item">PID: 1337</span>
+            </div>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

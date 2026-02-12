@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ClassroomX — Private Institutional Social Network by Aftab Alam">
+    <title>ClassroomX — AFTAB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">aftab<span>.dev</span></a>
+            <nav class="nav" id="main-nav">
+                <a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html"
+                    class="active">Projects</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <div class="toggle-group"><span class="toggle-label">Theme</span>
+                    <div class="toggle-btn" id="theme-toggle" role="button"></div>
+                </div>
+                <div class="toggle-group"><span class="toggle-label">Terminal</span>
+                    <div class="toggle-btn" id="terminal-toggle" role="button"></div>
+                </div>
+                <button class="hamburger" id="hamburger"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="project-header">
+                <span class="card-tag">Social Platform</span>
+                <h1>ClassroomX</h1>
+                <p class="project-role">System Architect & UI/UX Designer</p>
+                <p class="project-desc">ClassroomX is a closed, school-specific digital social platform. It provides
+                    communication, posts, confessions, complaints, and institutional announcements — all within a
+                    controlled environment. It is not public social media. It is governance-based digital
+                    infrastructure.</p>
+                <div class="card-tech mt-2">
+                    <span>Next.js</span><span>Supabase</span><span>WebSockets</span><span>Postgres</span>
+                </div>
+            </div>
+
+            <section class="project-section">
+                <h2><span class="emoji">🎯</span> Core Problem</h2>
+                <ul class="problem-list">
+                    <li>Students use public platforms where privacy is compromised</li>
+                    <li>Schools have no moderation over student interactions</li>
+                    <li>No structured reporting system exists</li>
+                    <li>No controlled digital community for academic use</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2><span class="emoji">⚙️</span> Key Systems</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">Controlled user onboarding</div>
+                    <div class="feature-item">Role-based access control</div>
+                    <div class="feature-item">Admin dashboard & moderation</div>
+                    <div class="feature-item">Post system with reactions</div>
+                    <div class="feature-item">Real-time messaging & updates</div>
+                    <div class="feature-item">Complaint & feedback tracking</div>
+                    <div class="feature-item">Vault memory gallery</div>
+                    <div class="feature-item">Confession mode with moderation</div>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <h2><span class="emoji">🧠</span> Backend Architecture</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">Structured Postgres schema</div>
+                    <div class="feature-item">Role-based policy logic</div>
+                    <div class="feature-item">Row-level security principles</div>
+                    <div class="feature-item">Real-time notifications</div>
+                    <div class="feature-item">User session tracking</div>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <h2><span class="emoji">🔐</span> Security Philosophy</h2>
+                <ul class="solution-list">
+                    <li>School-only access</li>
+                    <li>Admin-level moderation</li>
+                    <li>Controlled identity visibility</li>
+                    <li>Secure complaint handling</li>
+                </ul>
+                <div class="vision-box mt-3">
+                    <p>Build a safe digital campus environment where students can communicate, share, and collaborate
+                        without the risks of public social media.</p>
+                </div>
+            </section>
+
+            <div class="project-nav">
+                <a href="project-toppertrack.html">← Prev: TopperTrack</a>
+                <a href="project-counselling.html">Next: Counselling System →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <span>Aftab Alam</span> · 2026</p>
+        </div>
+    </footer>
+    <!-- ADVANCED TERMINAL -->
+    <div class="terminal-overlay" id="terminal-overlay">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="terminal-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <span class="terminal-title">aftab@portfolio — zsh — 80×24</span>
+            <button class="terminal-close" id="terminal-close">ESC</button>
+        </div>
+        <div class="terminal-body" id="terminal-body"></div>
+        <div class="terminal-input-line">
+            <span class="user">aftab</span><span class="at">@</span><span class="host">portfolio</span><span
+                class="colon">:</span><span class="dir">~</span><span class="dollar">$</span>
+            <input type="text" id="terminal-input" placeholder="" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="terminal-status">
+            <div class="status-left">
+                <span class="status-item"><span class="status-dot"></span> SECURE</span>
+                <span class="status-item">AES-256</span>
+                <span class="status-item">zsh 5.9</span>
+            </div>
+            <div class="status-right">
+                <span class="status-item">CMD: <span id="cmd-count">0</span></span>
+                <span class="status-item">PID: 1337</span>
+            </div>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

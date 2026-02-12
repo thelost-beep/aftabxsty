@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Aftab Alam — Student Developer & Future Engineer. Building systems with discipline and logic.">
+    <title>AFTAB — Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">aftab<span>.dev</span></a>
+
+            <nav class="nav" id="main-nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-controls">
+                <div class="toggle-group">
+                    <span class="toggle-label">Theme</span>
+                    <div class="toggle-btn" id="theme-toggle" role="button" aria-label="Toggle light/dark theme"></div>
+                </div>
+                <div class="toggle-group">
+                    <span class="toggle-label">Terminal</span>
+                    <div class="toggle-btn" id="terminal-toggle" role="button" aria-label="Toggle terminal mode"></div>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN ========== -->
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    <span>Available for projects</span>
+                </div>
+                <h1>AFTAB <span class="accent-text">ALAM</span></h1>
+                <p class="subtitle">Student Developer | Future Engineer</p>
+                <p class="tagline">// Building systems with discipline and logic.</p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary">View Projects</a>
+                    <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                </div>
+
+                <!-- Code Preview -->
+                <div class="code-block">
+                    <div class="dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="code-line"><span class="code-keyword">const</span> <span
+                            class="code-function">developer</span> = <span class="code-bracket">{</span></div>
+                    <div class="code-line"> name: <span class="code-string">"Aftab Alam"</span>,</div>
+                    <div class="code-line"> school: <span class="code-string">"BDRA-SOSE, Lajpat Nagar"</span>,</div>
+                    <div class="code-line"> role: <span class="code-string">"Student Developer"</span>,</div>
+                    <div class="code-line"> passion: <span class="code-string">"Building infrastructure systems"</span>,
+                    </div>
+                    <div class="code-line"> club: <span class="code-string">"EthicBizz"</span>,</div>
+                    <div class="code-line"><span class="code-bracket">}</span>;</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK STATS -->
+        <section class="section container">
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">Projects Built</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Lines of Code</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Mission</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS -->
+        <section class="section container">
+            <span class="section-label">Featured</span>
+            <h2 class="section-title">What I Build</h2>
+            <p class="section-desc">Infrastructure systems that reduce inefficiency — from library management to
+                healthcare queue optimization.</p>
+            <div class="cards-grid">
+                <a href="project-fect.html" class="card-link">
+                    <article class="card">
+                        <span class="card-tag">Infrastructure</span>
+                        <h3>Fect</h3>
+                        <p>A multi-user digital library management system modernizing school libraries with role-based
+                            access and institutional workflows.</p>
+                        <div class="card-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </article>
+                </a>
+                <a href="project-classroomx.html" class="card-link">
+                    <article class="card">
+                        <span class="card-tag">Social Platform</span>
+                        <h3>ClassroomX</h3>
+                        <p>A private institutional social network with real-time chat, posts, confessions, and
+                            governance-based moderation.</p>
+                        <div class="card-tech">
+                            <span>Next.js</span>
+                            <span>Supabase</span>
+                            <span>Real-time</span>
+                        </div>
+                    </article>
+                </a>
+                <a href="project-medique.html" class="card-link">
+                    <article class="card">
+                        <span class="card-tag">Healthcare</span>
+                        <h3>Medique</h3>
+                        <p>Smart medical queue optimization system designed to reduce hospital waiting times through
+                            digital sequencing.</p>
+                        <div class="card-tech">
+                            <span>Web App</span>
+                            <span>Algorithm</span>
+                            <span>Real-time</span>
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <span>Aftab Alam</span> · 2026</p>
+        </div>
+    </footer>
+
+    <!-- ========== ADVANCED TERMINAL ========== -->
+    <div class="terminal-overlay" id="terminal-overlay">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="terminal-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <span class="terminal-title">aftab@portfolio — zsh — 80×24</span>
+            <button class="terminal-close" id="terminal-close">ESC</button>
+        </div>
+        <div class="terminal-body" id="terminal-body"></div>
+        <div class="terminal-input-line">
+            <span class="user">aftab</span><span class="at">@</span><span class="host">portfolio</span><span
+                class="colon">:</span><span class="dir">~</span><span class="dollar">$</span>
+            <input type="text" id="terminal-input" placeholder="" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="terminal-status">
+            <div class="status-left">
+                <span class="status-item"><span class="status-dot"></span> SECURE</span>
+                <span class="status-item">AES-256</span>
+                <span class="status-item">zsh 5.9</span>
+            </div>
+            <div class="status-right">
+                <span class="status-item">CMD: <span id="cmd-count">0</span></span>
+                <span class="status-item">PID: 1337</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medique — Smart Medical Queue Optimization System by Aftab Alam">
+    <title>Medique — AFTAB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">aftab<span>.dev</span></a>
+            <nav class="nav" id="main-nav">
+                <a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html"
+                    class="active">Projects</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <div class="toggle-group"><span class="toggle-label">Theme</span>
+                    <div class="toggle-btn" id="theme-toggle" role="button"></div>
+                </div>
+                <div class="toggle-group"><span class="toggle-label">Terminal</span>
+                    <div class="toggle-btn" id="terminal-toggle" role="button"></div>
+                </div>
+                <button class="hamburger" id="hamburger"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="project-header">
+                <span class="card-tag">Healthcare</span>
+                <h1>Medique</h1>
+                <p class="project-role">System Designer & Developer</p>
+                <p class="project-desc">A queue management system designed to reduce overcrowding and waiting time in
+                    hospitals and clinics. It digitizes the traditional token system with smart, priority-based
+                    sequencing and real-time updates.</p>
+                <div class="card-tech mt-2"><span>Web App</span><span>Algorithm</span><span>Real-time</span></div>
+            </div>
+
+            <section class="project-section">
+                <h2><span class="emoji">🎯</span> Core Problem</h2>
+                <ul class="problem-list">
+                    <li>Long waiting lines in hospitals</li>
+                    <li>No time estimation for patients</li>
+                    <li>Manual token confusion and errors</li>
+                    <li>Poor crowd management</li>
+                    <li>No priority system for emergencies</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2><span class="emoji">⚙️</span> Core Modules</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">Digital token generation</div>
+                    <div class="feature-item">Live queue display</div>
+                    <div class="feature-item">Estimated waiting time algorithm</div>
+                    <div class="feature-item">Doctor dashboard</div>
+                    <div class="feature-item">Patient priority classification</div>
+                    <div class="feature-item">Real-time status updates</div>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <h2><span class="emoji">🧠</span> Optimization Logic</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">Dynamic queue rearrangement</div>
+                    <div class="feature-item">Time-based prediction for waiting</div>
+                    <div class="feature-item">Priority-based system (elderly / emergency)</div>
+                    <div class="feature-item">Multi-department support</div>
+                </div>
+                <div class="vision-box mt-3">
+                    <p>Reduce chaos in healthcare through structured digital sequencing. Every minute saved in a
+                        hospital queue is a minute that matters to someone.</p>
+                </div>
+            </section>
+
+            <div class="project-nav">
+                <a href="project-counselling.html">← Prev: Counselling System</a>
+                <a href="project-skin-analysis.html">Next: AI Skin Analysis →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <span>Aftab Alam</span> · 2026</p>
+        </div>
+    </footer>
+    <!-- ADVANCED TERMINAL -->
+    <div class="terminal-overlay" id="terminal-overlay">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="terminal-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <span class="terminal-title">aftab@portfolio — zsh — 80×24</span>
+            <button class="terminal-close" id="terminal-close">ESC</button>
+        </div>
+        <div class="terminal-body" id="terminal-body"></div>
+        <div class="terminal-input-line">
+            <span class="user">aftab</span><span class="at">@</span><span class="host">portfolio</span><span
+                class="colon">:</span><span class="dir">~</span><span class="dollar">$</span>
+            <input type="text" id="terminal-input" placeholder="" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="terminal-status">
+            <div class="status-left">
+                <span class="status-item"><span class="status-dot"></span> SECURE</span>
+                <span class="status-item">AES-256</span>
+                <span class="status-item">zsh 5.9</span>
+            </div>
+            <div class="status-right">
+                <span class="status-item">CMD: <span id="cmd-count">0</span></span>
+                <span class="status-item">PID: 1337</span>
+            </div>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

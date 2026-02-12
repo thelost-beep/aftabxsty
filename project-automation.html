@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Automation Projects — Scripts and tools by Aftab Alam">
+    <title>Automation — AFTAB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">aftab<span>.dev</span></a>
+            <nav class="nav" id="main-nav">
+                <a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html"
+                    class="active">Projects</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <div class="toggle-group"><span class="toggle-label">Theme</span>
+                    <div class="toggle-btn" id="theme-toggle" role="button"></div>
+                </div>
+                <div class="toggle-group"><span class="toggle-label">Terminal</span>
+                    <div class="toggle-btn" id="terminal-toggle" role="button"></div>
+                </div>
+                <button class="hamburger" id="hamburger"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="project-header">
+                <span class="card-tag">Automation</span>
+                <h1>Automation Projects</h1>
+                <p class="project-role">Developer & Scripter</p>
+                <p class="project-desc">A collection of automation scripts and tools designed to eliminate repetitive
+                    tasks, streamline workflows, and boost productivity. Every script is built to solve a specific pain
+                    point — because if a computer can do it, you shouldn't have to.</p>
+                <div class="card-tech mt-2"><span>Python</span><span>Shell</span><span>Scripting</span></div>
+            </div>
+
+            <section class="project-section">
+                <h2><span class="emoji">⚙️</span> What's Included</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">File management automation</div>
+                    <div class="feature-item">Data processing & transformation scripts</div>
+                    <div class="feature-item">Task scheduling tools</div>
+                    <div class="feature-item">Web scraping utilities</div>
+                    <div class="feature-item">Command-line utilities</div>
+                    <div class="feature-item">Batch operations for repetitive workflows</div>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <h2><span class="emoji">🧠</span> Philosophy</h2>
+                <div class="vision-box">
+                    <p>Automation is not about being lazy — it's about being efficient. Every minute spent on a
+                        repetitive task is a minute stolen from creative problem-solving. These scripts represent a
+                        mindset: <strong>if it can be automated, it should be.</strong></p>
+                </div>
+            </section>
+
+            <div class="project-nav">
+                <a href="project-sose-connect.html">← Prev: SOSE Connect</a>
+                <a href="project-jsconsole.html">Next: JS Console →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & built by <span>Aftab Alam</span> · 2026</p>
+        </div>
+    </footer>
+    <!-- ADVANCED TERMINAL -->
+    <div class="terminal-overlay" id="terminal-overlay">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="terminal-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <span class="terminal-title">aftab@portfolio — zsh — 80×24</span>
+            <button class="terminal-close" id="terminal-close">ESC</button>
+        </div>
+        <div class="terminal-body" id="terminal-body"></div>
+        <div class="terminal-input-line">
+            <span class="user">aftab</span><span class="at">@</span><span class="host">portfolio</span><span
+                class="colon">:</span><span class="dir">~</span><span class="dollar">$</span>
+            <input type="text" id="terminal-input" placeholder="" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="terminal-status">
+            <div class="status-left">
+                <span class="status-item"><span class="status-dot"></span> SECURE</span>
+                <span class="status-item">AES-256</span>
+                <span class="status-item">zsh 5.9</span>
+            </div>
+            <div class="status-right">
+                <span class="status-item">CMD: <span id="cmd-count">0</span></span>
+                <span class="status-item">PID: 1337</span>
+            </div>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
