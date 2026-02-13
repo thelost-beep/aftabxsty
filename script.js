@@ -1,7 +1,7 @@
 /* =============================================
    AFTAB PORTFOLIO — SUPERCHARGED TERMINAL v3.0
    Advanced hacker terminal w/ typing animations,
-   ASCII art, matrix rain, Gemini AI integration
+   ASCII art, matrix rain
    ============================================= */
 
 // ============ GLOBAL STATE ============
@@ -128,9 +128,8 @@ $ projects      # View all 10 projects
 [2026-02-13 01:00:01] AUTH: User aftab authenticated
 [2026-02-13 01:00:02] NET: Secure connection established
 [2026-02-13 01:00:03] GPU: Matrix renderer loaded
-[2026-02-13 01:00:04] AI: Gemini API endpoint ready
-[2026-02-13 01:00:05] SYS: All systems operational
-[2026-02-13 01:00:06] SEC: AES-256 encryption active`
+[2026-02-13 01:00:04] SYS: All systems operational
+[2026-02-13 01:00:05] SEC: AES-256 encryption active`
 };
 
 // ============ TYPING ANIMATION ENGINE ============
@@ -386,7 +385,6 @@ const commands = {
     sudo: cmdSudo,
     echo: cmdEcho,
     history: cmdHistory,
-    ai: cmdAI,
     banner: cmdBanner,
     man: cmdMan,
     wget: cmdWget,
@@ -601,7 +599,7 @@ async function cmdNeofetch() {
         `<span class="nf-key">CPU:</span>    Aftab Neural Engine v3.0`,
         `<span class="nf-key">GPU:</span>    Matrix Renderer GL`,
         `<span class="nf-key">Memory:</span> 1337MB / 16384MB`,
-        `<span class="nf-key">AI:</span>     Gemini API ${GEMINI_API_KEY ? '✓' : '✗ (no key)'}`,
+        `<span class="nf-key">AI:</span>     Offline (terminal mode)`,
         ``,
         `<span class="nf-colors">████████████████████</span>`,
     ];
@@ -922,7 +920,6 @@ function cmdCowsay(args) {
 
 function cmdExport(args) {
     if (!args.length) {
-        addLine('GEMINI_API_KEY=' + (GEMINI_API_KEY ? '****' : '(not set)'));
         addLine('TERM=xterm-256color');
         addLine('SHELL=/bin/zsh');
         addLine('USER=aftab');
@@ -931,102 +928,7 @@ function cmdExport(args) {
     }
     const [key, ...rest] = args.join(' ').split('=');
     const val = rest.join('=');
-    if (key === 'GEMINI_API_KEY' && val) {
-        // Can't actually set it in const, so we use window
-        window.__GEMINI_KEY = val;
-        addLine(`<span class="success-text">✓ GEMINI_API_KEY set successfully</span>`);
-        addLine('<span class="hint-text">You can now use the "ai" command!</span>');
-    } else {
-        addLine(`export: ${key}=${val}`);
-    }
-}
-
-// ============ GEMINI AI INTEGRATION ============
-async function cmdAI(args) {
-    const query = args.join(' ');
-    if (!query) {
-        addLine('<span class="ai-label">🤖 AI Assistant</span>');
-        addLine('Usage: ai <your question>');
-        addLine('Example: ai What projects has Aftab built?');
-        addLine('');
-        const key = window.__GEMINI_KEY || GEMINI_API_KEY;
-        if (!key) {
-            addLine('<span class="warning-text">⚠ No API key set. Run: export GEMINI_API_KEY=your_key</span>');
-            addLine('<span class="hint-text">Get a free key at: https://aistudio.google.com/apikey</span>');
-        }
-        return;
-    }
-
-    const key = window.__GEMINI_KEY || GEMINI_API_KEY;
-
-    if (!key) {
-        addLine('<span class="ai-label">🤖 AI Assistant</span>');
-        addLine('<span class="warning-text">⚠ Gemini API key not set.</span>');
-        addLine('Run: <span class="help-cmd">export GEMINI_API_KEY=your_key_here</span>');
-        addLine('<span class="hint-text">Get a free key at: https://aistudio.google.com/apikey</span>');
-        return;
-    }
-
-    addLine(`<span class="ai-label">🤖 AI</span> <span class="ai-query">Processing: "${escapeHtml(query)}"</span>`);
-
-    const thinkingLine = addLine('<span class="ai-thinking">⣾ Thinking...</span>');
-    const spinChars = ['⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷'];
-    let spinI = 0;
-    const spinner = setInterval(() => {
-        thinkingLine.innerHTML = `<span class="ai-thinking">${spinChars[spinI % spinChars.length]} Thinking...</span>`;
-        spinI++;
-    }, 100);
-
-    try {
-        const systemPrompt = `You are an AI assistant embedded in Aftab Alam's portfolio terminal. Aftab is a student developer at BDRA-SOSE school in Delhi, class 10th, DBSE board. He is the founder of EthicBizz club. He has built 10 projects: Fect (library system), TopperTrack (AI academic engine), ClassroomX (social network), Student Counselling System, Medique (healthcare queue), AI Skin Analysis, SOSE Connect (institutional platform), Automation scripts, JS Console (browser dev tools), and NastyTask Done (AI social task platform). His GitHub is github.com/thelost-beep. Keep responses concise and terminal-friendly (no markdown, just plain text). Be helpful, smart, and slightly hacker-themed.`;
-
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${key}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                contents: [{ parts: [{ text: systemPrompt + '\n\nUser asks: ' + query }] }],
-                generationConfig: { maxOutputTokens: 500, temperature: 0.7 }
-            })
-        });
-
-        clearInterval(spinner);
-
-        if (!response.ok) {
-            thinkingLine.remove();
-            if (response.status === 429) {
-                addLine('<span class="warning-text">⚠ Rate limit hit — Gemini free tier allows ~15 req/min.</span>');
-                addLine('<span class="hint-text">Wait 60 seconds and try again.</span>');
-            } else {
-                addLine(`<span class="error-text">AI Error: ${response.status} ${response.statusText}</span>`);
-            }
-            return;
-        }
-
-        const data = await response.json();
-        thinkingLine.remove();
-
-        const text = data.candidates?.[0]?.content?.parts?.[0]?.text || 'No response generated.';
-
-        addLine('<span class="ai-label">🤖 AI Response:</span>');
-        addLine('<span class="ai-divider">────────────────────────────────────</span>');
-
-        // Type out the response for dramatic effect
-        const responseLines = text.split('\n');
-        for (const line of responseLines) {
-            if (line.trim()) {
-                await addLineAnimated(line, 'ai-response', 5);
-            } else {
-                addLine('');
-            }
-        }
-        addLine('<span class="ai-divider">────────────────────────────────────</span>');
-
-    } catch (err) {
-        clearInterval(spinner);
-        thinkingLine.remove();
-        addLine(`<span class="error-text">AI Error: ${err.message}</span>`);
-        addLine('<span class="hint-text">Check your API key and internet connection.</span>');
-    }
+    addLine(`export: ${key}=${val}`);
 }
 
 // ============ COMMAND PROCESSOR ============
@@ -1191,11 +1093,19 @@ function setupTerminal() {
         });
     }
 
-    // Hamburger
+    // Hamburger — fully manual: you open it, you close it
     if (hamburger && nav) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             nav.classList.toggle('active');
+        });
+
+        // Close nav when a link is tapped
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            });
         });
     }
 
