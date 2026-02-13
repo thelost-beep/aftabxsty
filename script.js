@@ -315,7 +315,7 @@ async function bootSequence() {
     addLine('');
     await addLineAnimated('        ╔══════════════════════════════════════╗', 'boot-border', 4);
     await addLineAnimated('        ║   AFTAB PORTFOLIO TERMINAL v3.0     ║', 'boot-border', 4);
-    await addLineAnimated('        ║   Secure • Encrypted • AI-Powered   ║', 'boot-border', 4);
+    await addLineAnimated('        ║   Secure • Encrypted • Terminal     ║', 'boot-border', 4);
     await addLineAnimated('        ╚══════════════════════════════════════╝', 'boot-border', 4);
     addLine('');
 
@@ -348,7 +348,7 @@ async function bootSequence() {
 
     addLine('');
     await addLineAnimated('✓ System ready. Welcome back, aftab.', 'success-text', 10);
-    await addLineAnimated('Type "help" to see available commands, or "ai" to talk to AI.', 'hint-text', 10);
+    await addLineAnimated('Type "help" to see available commands.', 'hint-text', 10);
     addLine('');
 
     input.disabled = false;
@@ -365,6 +365,7 @@ const commands = {
     skills: cmdSkills,
     education: cmdEducation,
     projects: cmdProjects,
+    project: cmdProject,
     contact: cmdContact,
     github: cmdGithub,
     clear: cmdClear,
@@ -393,6 +394,10 @@ const commands = {
     fortune: cmdFortune,
     cowsay: cmdCowsay,
     export: cmdExport,
+    scan: cmdScan,
+    decrypt: cmdDecrypt,
+    glitch: cmdGlitch,
+    cmatrix: cmdCMatrix,
 };
 
 async function cmdHelp() {
@@ -429,7 +434,11 @@ async function cmdHelp() {
         {
             title: '═══ HACKER ═══', cmds: [
                 ['hack', 'Start hack sequence'],
+                ['scan', 'Network recon scan'],
+                ['decrypt', 'Decrypt simulation'],
+                ['glitch', 'Screen glitch effect'],
                 ['matrix [1-3]', 'Toggle matrix rain'],
+                ['cmatrix', 'Fullscreen matrix mode'],
                 ['theme <g|b|a>', 'Change terminal theme'],
                 ['ping <host>', 'Ping a server'],
                 ['sudo <cmd>', 'Run as root'],
@@ -438,8 +447,9 @@ async function cmdHelp() {
             ]
         },
         {
-            title: '═══ AI ═══', cmds: [
-                ['ai <question>', 'Chat with Gemini AI'],
+            title: '═══ PROJECTS ═══', cmds: [
+                ['project <name>', 'Load project details'],
+                ['project list', 'List all project names'],
             ]
         },
         {
@@ -929,6 +939,339 @@ function cmdExport(args) {
     const [key, ...rest] = args.join(' ').split('=');
     const val = rest.join('=');
     addLine(`export: ${key}=${val}`);
+}
+
+// ============ PROJECT DETAILS ============
+const projectData = {
+    fect: {
+        name: 'Fect',
+        tag: 'Infrastructure',
+        tech: 'HTML / CSS / JavaScript',
+        desc: 'A multi-user digital library management system modernizing school libraries with role-based access, barcode scanning, and institutional workflows.',
+        features: ['Role-based access (Admin, Librarian, Student)', 'Book issue/return tracking', 'Search & filter system', 'Late fine calculator', 'Dashboard analytics'],
+        status: 'Complete',
+    },
+    toppertrack: {
+        name: 'TopperTrack',
+        tag: 'AI Academic Engine',
+        tech: 'React / Supabase / AI',
+        desc: 'AI-powered academic tracking system that analyzes student performance, predicts outcomes, and generates personalized study plans.',
+        features: ['AI grade prediction', 'Performance dashboards', 'Study plan generator', 'Subject-wise analytics', 'Parent/teacher views'],
+        status: 'Complete',
+    },
+    classroomx: {
+        name: 'ClassroomX',
+        tag: 'Social Platform',
+        tech: 'Next.js / Supabase / Real-time',
+        desc: 'A private institutional social network with real-time chat, posts, confessions, and governance-based moderation.',
+        features: ['Real-time messaging (WebSocket)', 'Post feed with reactions', 'Anonymous confessions', 'Admin moderation panel', 'Push notifications'],
+        status: 'Active Development',
+    },
+    counselling: {
+        name: 'Student Counselling System',
+        tag: 'Mental Health',
+        tech: 'Web App',
+        desc: 'Digital counselling management system connecting students with counsellors through structured workflows.',
+        features: ['Appointment booking', 'Counsellor matching', 'Session notes', 'Progress tracking', 'Privacy-first design'],
+        status: 'Complete',
+    },
+    medique: {
+        name: 'Medique',
+        tag: 'Healthcare',
+        tech: 'Algorithm / Real-time',
+        desc: 'Smart medical queue optimization system designed to reduce hospital waiting times through digital sequencing.',
+        features: ['Smart queue algorithm', 'Priority-based sorting', 'Real-time queue updates', 'Wait time estimation', 'Multi-department support'],
+        status: 'Complete',
+    },
+    'skin-analysis': {
+        name: 'AI Skin Analysis',
+        tag: 'AI/ML Concept',
+        tech: 'Python / TensorFlow',
+        desc: 'AI-powered skin condition analysis tool using machine learning for preliminary dermatological screening.',
+        features: ['Image upload & analysis', 'Condition detection', 'Severity scoring', 'Treatment suggestions', 'History tracking'],
+        status: 'Concept',
+    },
+    'sose-connect': {
+        name: 'SOSE Connect',
+        tag: 'Institutional Platform',
+        tech: 'PostgreSQL / RLS',
+        desc: 'Institutional communication and resource platform with role-based security and data isolation.',
+        features: ['Row-Level Security (RLS)', 'Multi-tenant architecture', 'Resource sharing', 'Announcement system', 'User management'],
+        status: 'Complete',
+    },
+    automation: {
+        name: 'Automation Scripts',
+        tag: 'DevOps',
+        tech: 'Python / Shell',
+        desc: 'Collection of automation scripts and tools for development workflows and system administration.',
+        features: ['File organization bots', 'Deployment scripts', 'Database backup tools', 'Log analyzers', 'Build automation'],
+        status: 'Ongoing',
+    },
+    jsconsole: {
+        name: 'AFTAB JS Console',
+        tag: 'Developer Tools',
+        tech: 'JavaScript / Runtime Engine',
+        desc: 'A lightweight browser-based JavaScript console for writing and executing JS code — zero installation required.',
+        features: ['Custom console.log override', 'Error stack display', 'Runtime execution isolation', 'Ctrl+Enter shortcut', 'Sandboxed execution'],
+        status: 'Complete',
+    },
+    nastytask: {
+        name: 'NastyTask Done',
+        tag: 'AI Social Platform',
+        tech: 'React / AI',
+        desc: 'AI-powered social task management platform combining productivity with community collaboration.',
+        features: ['AI task suggestions', 'Social feed integration', 'Gamification system', 'Team collaboration', 'Progress leaderboards'],
+        status: 'In Progress',
+    },
+};
+
+async function cmdProject(args) {
+    const query = args.join(' ').toLowerCase().trim();
+
+    if (!query || query === 'list') {
+        await addLineAnimated('┌─── PROJECTS ──────────────────────────────┐', 'info-border', 5);
+        addLine('│');
+        const names = Object.keys(projectData);
+        for (const key of names) {
+            const p = projectData[key];
+            addLine(`│  <span class="proj-name">${p.name.padEnd(24)}</span> <span class="help-desc">project ${key}</span>`);
+            await sleep(30);
+        }
+        addLine('│');
+        await addLineAnimated('└───────────────────────────────────────────┘', 'info-border', 5);
+        addLine('<span class="hint-text">Usage: project <name>  (e.g. project fect)</span>');
+        return;
+    }
+
+    const proj = projectData[query];
+    if (!proj) {
+        addLine(`<span class="error-text">Project not found: ${escapeHtml(query)}</span>`);
+        addLine('<span class="hint-text">Run "project list" to see available projects.</span>');
+        return;
+    }
+
+    // Loading animation
+    addLine(`<span class="boot-text">[*] Loading project database...</span>`);
+    await sleep(200);
+    addLine(`<span class="boot-text">[*] Decrypting project files...</span>`);
+    await sleep(200);
+    addLine(`<span class="success-text">[+] Project loaded: ${proj.name}</span>`);
+    addLine('');
+
+    await addLineAnimated(`┌─── ${proj.name.toUpperCase()} ${'─'.repeat(Math.max(2, 38 - proj.name.length))}┐`, 'info-border', 5);
+    addLine(`│ <span class="info-key">Name      </span> <span class="info-val">${proj.name}</span>`);
+    addLine(`│ <span class="info-key">Category  </span> <span class="info-val">${proj.tag}</span>`);
+    addLine(`│ <span class="info-key">Tech      </span> <span class="info-val">${proj.tech}</span>`);
+    addLine(`│ <span class="info-key">Status    </span> <span class="info-val">${proj.status}</span>`);
+    addLine('│');
+    addLine(`│ <span class="info-key">Description:</span>`);
+
+    const words = proj.desc.split(' ');
+    let line = '│  ';
+    for (const word of words) {
+        if ((line + word).length > 48) {
+            addLine(line);
+            line = '│  ' + word + ' ';
+        } else {
+            line += word + ' ';
+        }
+    }
+    if (line.trim() !== '│') addLine(line);
+
+    addLine('│');
+    addLine(`│ <span class="info-key">Features:</span>`);
+    for (const feat of proj.features) {
+        addLine(`│  <span class="success-text">▸</span> ${feat}`);
+        await sleep(40);
+    }
+
+    await addLineAnimated(`└${'─'.repeat(43)}┘`, 'info-border', 5);
+}
+
+// ============ HACKER COMMANDS ============
+async function cmdScan() {
+    const input = document.getElementById('terminal-input');
+    input.disabled = true;
+
+    await addLineAnimated('[*] Initializing network reconnaissance engine...', 'boot-text', 6);
+    await sleep(300);
+    await addLineAnimated('[*] Scanning subnet 192.168.1.0/24...', 'boot-text', 6);
+    await sleep(400);
+
+    const hosts = [
+        { ip: '192.168.1.1', name: 'gateway.local', ports: '80,443,8080', os: 'Linux 5.4' },
+        { ip: '192.168.1.10', name: 'fileserver.local', ports: '22,445,3389', os: 'Windows Server 2019' },
+        { ip: '192.168.1.25', name: 'db-primary.local', ports: '5432,6379', os: 'Ubuntu 22.04' },
+        { ip: '192.168.1.42', name: 'aftab-dev.local', ports: '3000,5173,8080', os: 'AftabOS v3.0' },
+        { ip: '192.168.1.100', name: 'printer.local', ports: '631,9100', os: 'Embedded Linux' },
+        { ip: '192.168.1.200', name: 'cam-01.local', ports: '554,80', os: 'IoT Firmware' },
+    ];
+
+    addLine('');
+    addLine('<span class="info-key">HOST              HOSTNAME                PORTS            OS</span>');
+    addLine('<span class="info-border">────────────────────────────────────────────────────────────────</span>');
+
+    for (const h of hosts) {
+        const isAftab = h.name.includes('aftab');
+        const cls = isAftab ? 'success-text' : '';
+        addLine(`<span class="${cls}">${h.ip.padEnd(18)}${h.name.padEnd(24)}${h.ports.padEnd(17)}${h.os}</span>`);
+        await sleep(200);
+    }
+
+    addLine('');
+    await addLineAnimated(`[+] Scan complete: ${hosts.length} hosts discovered`, 'success-text', 6);
+    await sleep(200);
+
+    // Vulnerability scan
+    await addLineAnimated('[*] Running vulnerability scan...', 'boot-text', 6);
+    await sleep(500);
+
+    const vulns = [
+        '[!] CVE-2024-1337  — gateway: HTTP header injection (Medium)',
+        '[!] CVE-2024-0042  — fileserver: SMB signing disabled (Low)',
+        '[!] CVE-2024-9999  — cam-01: Default credentials (Critical)',
+    ];
+
+    for (const v of vulns) {
+        addLine(`<span class="warning-text">${v}</span>`);
+        await sleep(300);
+    }
+
+    addLine('');
+    await addLineAnimated('[+] Recon complete. 3 vulnerabilities found.', 'success-text', 6);
+    await addLineAnimated('[*] Results saved to /tmp/scan_results.json', 'boot-text', 6);
+
+    input.disabled = false;
+    input.focus();
+}
+
+async function cmdDecrypt() {
+    const input = document.getElementById('terminal-input');
+    input.disabled = true;
+
+    await addLineAnimated('[*] Intercepted encrypted transmission...', 'boot-text', 6);
+    await sleep(300);
+    await addLineAnimated('[*] Analyzing cipher: AES-256-CBC', 'boot-text', 6);
+    await sleep(200);
+    await addLineAnimated('[*] Attempting brute-force key derivation...', 'boot-text', 6);
+    await sleep(400);
+
+    // Hex scramble animation
+    const hexChars = '0123456789ABCDEF';
+    const message = 'AFTAB ALAM — STUDENT DEVELOPER — BUILDING SYSTEMS WITH DISCIPLINE';
+    const hexLines = [];
+
+    for (let row = 0; row < 4; row++) {
+        let hex = '';
+        for (let i = 0; i < 48; i++) {
+            hex += hexChars[Math.floor(Math.random() * 16)];
+            if ((i + 1) % 2 === 0) hex += ' ';
+        }
+        const line = addLine(`<span class="warning-text">${hex}</span>`);
+        hexLines.push(line);
+        await sleep(100);
+    }
+
+    addLine('');
+    await addLineAnimated('[+] Key found: 0x4146544142...', 'success-text', 6);
+    await sleep(300);
+
+    // Progress bar
+    const barLine = addLine('');
+    for (let i = 0; i <= 100; i += 5) {
+        const filled = Math.floor(i / 2.5);
+        const empty = 40 - filled;
+        barLine.innerHTML = `<span class="boot-text">Decrypting: [<span class="success-text">${'█'.repeat(filled)}</span>${'░'.repeat(empty)}] ${i}%</span>`;
+        await sleep(50);
+    }
+
+    addLine('');
+    await addLineAnimated('[+] Decryption successful!', 'success-text', 6);
+    addLine('');
+    addLine('<span class="info-border">────────────────────────────────────────────</span>');
+
+    // Type out decrypted message letter by letter
+    const msgLine = addLine('');
+    for (let i = 0; i <= message.length; i++) {
+        const revealed = `<span class="success-text">${message.substring(0, i)}</span>`;
+        const scrambled = message.substring(i).split('').map(() =>
+            hexChars[Math.floor(Math.random() * 16)]
+        ).join('');
+        msgLine.innerHTML = revealed + `<span class="warning-text">${scrambled}</span>`;
+        await sleep(30);
+    }
+    msgLine.innerHTML = `<span class="hack-success">${message}</span>`;
+
+    addLine('<span class="info-border">────────────────────────────────────────────</span>');
+
+    input.disabled = false;
+    input.focus();
+}
+
+async function cmdGlitch() {
+    const body = document.getElementById('terminal-body');
+    const overlay = document.getElementById('terminal-overlay');
+
+    // Add glitch CSS class temporarily
+    overlay.style.animation = 'glitch 0.3s ease 3';
+
+    // Scramble existing terminal text temporarily
+    const lines = body.querySelectorAll('.terminal-line');
+    const originals = [];
+    const glitchChars = '!@#$%^&*()_+-=[]{}|;:,.<>?/~`░▒▓█▄▀■□▪▫';
+
+    lines.forEach((line, i) => {
+        originals.push(line.innerHTML);
+        if (Math.random() > 0.4) {
+            let scrambled = '';
+            for (let j = 0; j < 40; j++) {
+                scrambled += glitchChars[Math.floor(Math.random() * glitchChars.length)];
+            }
+            line.innerHTML = `<span class="error-text">${scrambled}</span>`;
+        }
+    });
+
+    await sleep(400);
+
+    // Flash screen
+    overlay.style.filter = 'invert(1)';
+    await sleep(80);
+    overlay.style.filter = '';
+    await sleep(100);
+    overlay.style.filter = 'invert(1) hue-rotate(90deg)';
+    await sleep(60);
+    overlay.style.filter = '';
+
+    // Restore lines
+    lines.forEach((line, i) => {
+        if (originals[i]) line.innerHTML = originals[i];
+    });
+
+    overlay.style.animation = '';
+
+    await sleep(200);
+    addLine('');
+    addLine('<span class="error-text">█ SYSTEM CORRUPTION DETECTED █</span>');
+    addLine('<span class="warning-text">⚠ Memory segment fault at 0x7FFF3A2B</span>');
+    await sleep(300);
+    addLine('<span class="success-text">[+] Auto-repair complete. System stable.</span>');
+    addLine('<span class="hint-text">Just a visual glitch. Or was it? 👀</span>');
+}
+
+function cmdCMatrix() {
+    if (matrixRunning) {
+        matrixRunning = false;
+        const canvas = document.getElementById('matrix-canvas');
+        if (matrixCtx) matrixCtx.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.style.opacity = '0.08';
+        addLine('<span class="success-text">Matrix rain disabled. Back to reality.</span>');
+    } else {
+        toggleMatrix(3);
+        const canvas = document.getElementById('matrix-canvas');
+        canvas.style.opacity = '0.3';
+        addLine('<span class="success-text">█ CMATRIX — Full immersion mode activated █</span>');
+        addLine('<span class="hint-text">Run "cmatrix" again to disable.</span>');
+    }
 }
 
 // ============ COMMAND PROCESSOR ============

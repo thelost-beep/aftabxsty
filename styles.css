@@ -1399,6 +1399,42 @@ main {
     animation: glitch 0.3s ease;
 }
 
+/* New terminal command styling */
+.warning-text {
+    color: #febc2e;
+    text-shadow: 0 0 6px rgba(254, 188, 46, 0.4);
+}
+
+.error-text {
+    color: #ff5f57;
+    text-shadow: 0 0 8px rgba(255, 95, 87, 0.5);
+}
+
+.proj-name {
+    color: #00bfff;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(0, 191, 255, 0.4);
+}
+
+.hack-success {
+    color: #00ff88;
+    font-weight: 700;
+    text-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
+    animation: hackGlow 1.5s ease infinite;
+}
+
+@keyframes hackGlow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
+    }
+
+    50% {
+        text-shadow: 0 0 24px rgba(0, 255, 136, 0.9), 0 0 48px rgba(0, 255, 136, 0.3);
+    }
+}
+
 /* Cursor blink */
 @keyframes termBlink {
 
@@ -2258,35 +2294,30 @@ main {
     opacity: 1;
 }
 
-@media (max-width: 768px) {
-    .project-header h1 {
-        font-size: 1.8rem;
-    }
+/* ============================================
+   MOBILE RESPONSIVE — COMPLETE
+   No horizontal scroll. Phone-perfect layout.
+   ============================================ */
 
-    .feature-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-nav {
-        flex-direction: column;
-    }
+/* Global overflow prevention */
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
-/* ---------- Mobile Navigation ---------- */
 @media (max-width: 768px) {
 
-    /* Show hamburger */
+    /* ===== NAVIGATION ===== */
     .hamburger {
         display: flex;
         z-index: 200;
     }
 
-    /* Hide toggle labels on small screens */
     .toggle-label {
         display: none;
     }
 
-    /* Mobile nav — smooth slide */
     .nav {
         position: absolute;
         top: 64px;
@@ -2299,8 +2330,6 @@ main {
         gap: 4px;
         box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
         z-index: 150;
-
-        /* Hidden state — NO display:none, use opacity+transform */
         opacity: 0;
         visibility: hidden;
         transform: translateY(-20px);
@@ -2308,7 +2337,6 @@ main {
         transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
     }
 
-    /* Open state — smooth slide in */
     .nav.active {
         opacity: 1;
         visibility: visible;
@@ -2329,7 +2357,6 @@ main {
         background: var(--accent-dim);
     }
 
-    /* Hamburger X animation */
     .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -2342,20 +2369,255 @@ main {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* Responsive typography */
+    /* ===== HERO ===== */
+    .hero {
+        min-height: calc(100vh - 80px);
+        padding: 0 8px;
+    }
+
     .hero h1 {
         font-size: clamp(2rem, 8vw, 3rem);
     }
 
+    .hero .subtitle {
+        font-size: 1rem;
+    }
+
+    .hero .tagline {
+        font-size: 0.8rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* ===== CODE BLOCK ===== */
+    .code-block {
+        font-size: 0.72rem;
+        padding: 16px;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
     .section-title {
         font-size: 1.5rem;
     }
 
+    .section-desc {
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* ===== GRIDS ===== */
     .cards-grid {
         grid-template-columns: 1fr;
     }
 
     .stats-row {
         grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .about-image {
+        max-height: 300px;
+        overflow: hidden;
+        border-radius: var(--radius);
+    }
+
+    .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* ===== TABLES ===== */
+    .styled-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 10px 14px;
+        font-size: 0.8rem;
+    }
+
+    /* ===== PROJECT PAGES ===== */
+    .project-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .project-header .project-desc {
+        font-size: 0.88rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-item {
+        font-size: 0.85rem;
+        padding: 14px;
+    }
+
+    .project-nav {
+        flex-direction: column;
+    }
+
+    .project-nav a {
+        padding: 12px 16px;
+        font-size: 0.82rem;
+    }
+
+    .back-link {
+        font-size: 0.82rem;
+    }
+
+    .vision-box {
+        padding: 16px;
+    }
+
+    .vision-box p {
+        font-size: 0.88rem;
+    }
+
+    /* ===== TIMELINE ===== */
+    .timeline {
+        padding-left: 24px;
+    }
+
+    /* ===== CARDS ===== */
+    .card {
+        padding: 20px;
+    }
+
+    .card h3 {
+        font-size: 1.1rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+
+    /* ===== CONTAINER ===== */
+    .container {
+        padding: 0 16px;
+    }
+
+    main {
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+
+    .section {
+        margin-bottom: 48px;
+    }
+
+    /* ===== TERMINAL — MOBILE ===== */
+    .terminal-header {
+        padding: 6px 12px;
+    }
+
+    .terminal-title {
+        font-size: 0.6rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 50vw;
+    }
+
+    .terminal-body {
+        padding: 12px 14px;
+        font-size: 0.68rem;
+        line-height: 1.5;
+    }
+
+    .terminal-input-line {
+        padding: 8px 14px 12px;
+    }
+
+    .terminal-input-line .user,
+    .terminal-input-line .at,
+    .terminal-input-line .host,
+    .terminal-input-line .colon,
+    .terminal-input-line .dir,
+    .terminal-input-line .dollar {
+        font-size: 0.7rem;
+    }
+
+    .terminal-input-line input {
+        font-size: 0.72rem;
+    }
+
+    .terminal-status {
+        padding: 3px 10px;
+        font-size: 0.55rem;
+    }
+
+    .terminal-status .status-left,
+    .terminal-status .status-right {
+        gap: 8px;
+    }
+
+    .terminal-ascii {
+        font-size: 0.45rem;
+        line-height: 1.1;
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox img {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
+
+    .lightbox-close {
+        top: 12px;
+        right: 12px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+        padding: 24px 0;
+    }
+
+    .footer p {
+        font-size: 0.75rem;
     }
 }
